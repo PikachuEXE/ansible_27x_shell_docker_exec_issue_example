@@ -1,0 +1,5 @@
+---
+# Just upload files regardless to avoid
+# folders being created when a container is started with volumns
+# (And files cannot be uploaded after that)
+- include: backup.yml

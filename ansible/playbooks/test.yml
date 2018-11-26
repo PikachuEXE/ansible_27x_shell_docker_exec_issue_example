@@ -1,0 +1,6 @@
+---
+- name: test
+  hosts: all
+  max_fail_percentage: 0
+  roles:
+  - role: elasticsearch

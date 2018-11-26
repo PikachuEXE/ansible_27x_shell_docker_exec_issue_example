@@ -1,0 +1,8 @@
+[locals]
+localhost
+
+[locals:vars]
+ansible_connection=local
+
+
+;db_server_google_hongkong_01 ansible_host=35.220.241.248

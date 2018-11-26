@@ -1,0 +1,13 @@
+---
+# Just copied from cron jobs
+- name: "backup"
+  register: command_result
+  shell: >
+    sleep 10
+  ignore_errors: true
+  failed_when: "(command_result.stderr | length) > 0"
+
+- name: show error message
+  fail:
+    msg: "{{ command_result.stderr }}"
+  when: "command_result is failed"

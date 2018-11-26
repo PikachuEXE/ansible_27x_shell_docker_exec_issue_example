@@ -1,0 +1,33 @@
+---
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+# Not sure where is `elasticsearch-oss` documented though
+docker_image_name:          docker.elastic.co/elasticsearch/elasticsearch-oss
+docker_image_tag:           "6.4.3"
+
+docker_container_prefix:    spacious.elasticsearch
+docker_container_count:     1
+
+memory_limit_mb: "512"
+
+docker_memory_limit:        "{{ memory_limit_mb }}MB"
+
+
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+container_data_path:      "/usr/share/elasticsearch/data"
+
+container_backup_path:    "/backup"
+
+
+docker_container_env:
+  # "path.data": "{{ container_data_path }}"
+  "http.host": "0.0.0.0"
+  "transport.host": "127.0.0.1"
+  "bootstrap.memory_lock": "true"
+  "cluster.name": "elastic-cluster"
+  "indices.query.bool.max_clause_count": "10240"
+  "index.store.preload": "nvd,dvd,tim,doc,dim"
+  "ES_JAVA_OPTS": "-Xms{{ memory_limit_mb }}M -Xmx{{ memory_limit_mb }}M"
+
+
+docker_config_ports:
+- 9200:9200
