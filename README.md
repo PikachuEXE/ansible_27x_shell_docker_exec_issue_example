@@ -6,7 +6,7 @@
 ```
 virtualenv --clear env/ansible_26x
 source env/ansible_26x/bin/activate
-pip install ansible==2.6.5
+pip install ansible==2.6.10
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
@@ -15,7 +15,7 @@ ansible-playbook ansible/playbooks/test.yml
 ```
 virtualenv --clear env/ansible_27x
 source env/ansible_27x/bin/activate
-pip install ansible==2.7.2
+pip install ansible==2.7.4
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
@@ -23,7 +23,11 @@ ansible-playbook ansible/playbooks/test.yml
 #### Using docker
 
 2.6:
-`docker build -t test -f dockerfiles/ubuntu1804_ansible26.Dockerfile . && docker run -it --rm test`
+```
+docker build -t test -f dockerfiles/ubuntu1804_ansible26.Dockerfile . && docker run -it --rm test
+```
 
 2.7:
-`docker build -t test -f dockerfiles/ubuntu1804_ansible27.Dockerfile . && docker run -it --rm test`
+```
+docker build -t test -f dockerfiles/ubuntu1804_ansible27.Dockerfile . && docker run -it --rm test
+```
