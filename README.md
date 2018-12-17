@@ -6,7 +6,7 @@
 ```
 virtualenv --clear env/ansible_26x
 source env/ansible_26x/bin/activate
-pip install ansible==2.6.10
+pip install ansible==2.6.11
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
@@ -15,7 +15,7 @@ ansible-playbook ansible/playbooks/test.yml
 ```
 virtualenv --clear env/ansible_27x
 source env/ansible_27x/bin/activate
-pip install ansible==2.7.4
+pip install ansible==2.7.5
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
@@ -24,10 +24,10 @@ ansible-playbook ansible/playbooks/test.yml
 
 2.6:
 ```
-docker build -t test -f dockerfiles/ubuntu1804_ansible26.Dockerfile . && docker run -it --rm test
+IMAGE_LABEL=test_ansible_26; docker build -t $IMAGE_LABEL -f dockerfiles/ubuntu1804_ansible26.Dockerfile . && docker run -it --rm $IMAGE_LABEL
 ```
 
 2.7:
 ```
-docker build -t test -f dockerfiles/ubuntu1804_ansible27.Dockerfile . && docker run -it --rm test
+IMAGE_LABEL=test_ansible_27; docker build -t $IMAGE_LABEL -f dockerfiles/ubuntu1804_ansible27.Dockerfile . && docker run -it --rm $IMAGE_LABEL
 ```

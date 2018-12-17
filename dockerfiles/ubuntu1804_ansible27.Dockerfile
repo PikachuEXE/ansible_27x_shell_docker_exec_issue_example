@@ -17,7 +17,7 @@ RUN \
     wheel
 
 RUN \
-  pip install ansible==2.7.4 \
+  pip install ansible==2.7.5 \
   && \
   ansible --version
 
