@@ -6,7 +6,7 @@
 ```
 virtualenv --clear env/ansible_26x
 source env/ansible_26x/bin/activate
-pip install ansible==2.6.11
+pip install ansible==2.6.12
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
@@ -15,7 +15,7 @@ ansible-playbook ansible/playbooks/test.yml
 ```
 virtualenv --clear env/ansible_27x
 source env/ansible_27x/bin/activate
-pip install ansible==2.7.5
+pip install ansible==2.7.6
 ansible --version
 ansible-playbook ansible/playbooks/test.yml
 ```
